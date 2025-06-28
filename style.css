@@ -1,0 +1,196 @@
+/* Importação da fonte e reset básico */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilo do corpo da página */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(209, 54, 201, 1) 0%,
+    rgba(181, 97, 255, 1) 46%,
+    rgba(199, 111, 183, 1) 100%
+  );
+  color: white;
+  text-align: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos do contador */
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.title {
+  grid-column: span 4;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+  min-width: 100px;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+.value {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.name {
+  display: block;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Mensagem final */
+#final-message {
+  display: none;
+  font-size: 2.8em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 0, 119, 0.85);
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 0, 100, 0.5);
+  animation: fadeInMessage 1.5s ease-in-out forwards;
+  margin-top: 20px;
+}
+
+/* Classe para esconder elementos (usada no contador e carrossel) */
+.hidden {
+  display: none !important;
+}
+
+/* Animação de entrada */
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos do Carrossel */
+.carousel-container {
+  position: relative;
+  max-width: 600px;
+  width: 90vw;
+  margin: 40px auto 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  display: none; /* Começa escondido, JS vai mostrar */
+  animation: fadeInMessage 2s ease-in-out forwards;
+}
+
+.carousel-slide {
+  display: none; /* Slides ficam escondidos por padrão */
+}
+
+.carousel-slide.active {
+  display: block; /* Apenas o slide ativo é mostrado */
+  animation: fadeInSlide 0.8s ease-in-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  transition: 0.5s ease;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Design Responsivo */
+@media (max-width: 768px) {
+  .countdown {
+    gap: 16px;
+  }
+  .value {
+    font-size: 48px;
+  }
+  .title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .countdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #final-message {
+    font-size: 2em;
+    padding: 20px 25px;
+  }
+}

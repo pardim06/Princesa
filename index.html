@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Princesa</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <!-- Seção do Contador Regressivo -->
+      <section
+        class="countdown"
+        id="countdown"
+        aria-label="Contador regressivo para aniversário"
+      >
+        <h1 class="title">Aniversário da minha princesa❤️</h1>
+        <div class="box">
+          <span class="value" data-days>00</span>
+          <span class="name">Dias</span>
+        </div>
+        <div class="box">
+          <span class="value" data-hours>00</span>
+          <span class="name">Horas</span>
+        </div>
+        <div class="box">
+          <span class="value" data-minutes>00</span>
+          <span class="name">Minutos</span>
+        </div>
+        <div class="box">
+          <span class="value" data-seconds>00</span>
+          <span class="name">Segundos</span>
+        </div>
+      </section>
+
+      <!-- Mensagem Final que aparece após o contador -->
+      <div id="final-message" role="alert" aria-live="assertive"></div>
+
+      <!-- Carrossel de Fotos (inicialmente escondido) -->
+      <section
+        id="photo-carousel"
+        class="carousel-container"
+        aria-label="Carrossel de Fotos"
+      >
+        <div class="carousel-slide">
+          <img
+            src="fotos/1.jpg"
+            alt="Sua foto 1"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFC0CB/333333?text=Erro+ao+carregar+foto1.jpg'"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="fotos/2.jpg"
+            alt="Sua foto 2"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFB6C1/333333?text=Erro+ao+carregar+foto2.jpg'"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="fotos/3.jpg"
+            alt="Sua foto 3"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x400/FF69B4/FFFFFF?text=Erro+ao+carregar+foto3.jpg'"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="fotos/4.jpg"
+            alt="Sua foto 4"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x400/DB7093/FFFFFF?text=Erro+ao+carregar+foto4.jpg'"
+          />
+        </div>
+        <div class="carousel-slide">
+          <img
+            src="fotos/5.jpg"
+            alt="Sua foto 5"
+             onerror="this.onerror=null;this.src='https://placehold.co/600x400/C71585/FFFFFF?text=Erro+ao+carregar+foto5.jpg'"
+          />
+        </div>
+        <!-- Os botões de navegação foram removidos -->
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
